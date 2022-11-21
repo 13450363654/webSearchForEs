@@ -340,6 +340,7 @@ public class SearchService {
                 endDate = simpleDateFormat.parse(endTime);
                 timeString = timeString.replace("startTime",Long.toString(startDate.getTime()));
                 timeString = timeString.replace("endTime",Long.toString(endDate.getTime()));
+                System.out.println(timeString);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
