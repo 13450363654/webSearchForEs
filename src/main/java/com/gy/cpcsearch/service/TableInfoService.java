@@ -55,8 +55,8 @@ public class TableInfoService {
             resultJson.put(jsonObject.getString("tType"),jsonObject.getString("aliases").split(","));
             resultArray.add(resultJson);
         }
-        resultArray.add(resultArray.remove(2));
-        resultArray.add(resultArray.remove(4));
+//        resultArray.add(resultArray.remove(2));
+//        resultArray.add(resultArray.remove(4));
         return resultArray;
     }
 

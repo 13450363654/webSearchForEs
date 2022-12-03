@@ -181,7 +181,11 @@ public class SearchService {
         JSONObject countIndexJson = null;
         if(!searchValue.trim().equals("")){
             List<String> allTableNameList = tableInfoService.findAllName();
-            ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(allTableNameList.size());
+            int threadSize = 1;
+            if (null != allTableNameList && allTableNameList.size() > 0) {
+                threadSize = allTableNameList.size();
+            }
+            ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(threadSize);
             String countSearchJson = getSearchString(null,searchValue,0,1,startTime,endTime,sortString);
             countIndexJson = new JSONObject();
             for(String oneTableName:allTableNameList){
